@@ -1,0 +1,57 @@
+<!--https://www.youtube.com/watch?v=rEa99-NQ9Bk&t=1557s-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube Gallery</title>
+  <link rel="icon" type="image/x-icon" href="./vid_icon.png">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1 class="headline">
+          <span style="color:#FF6969">Yo</span>uTu<span style="color:#FF6969">be</span> 
+          <br>Videos 
+          <br>Collection
+        </h1>
+        <p>
+          I use Youtube everyday and come across a tons of good content. I create this site to store my favorite videos.
+        </p>
+      </div>
+      <form>
+        <label for="videoId">Video ID</label>
+        <input type="text" name="videoId" id="videoId" placeholder="Id 's of Youtube Video">
+        <label for="videoCat">Category</label>
+        <input type="text" name="videoCat" id="videoCat" placeholder="Music, Productivity, SoftSkill, React...">
+        <button onclick="saveVideo(event)">Save this video!</button>
+      </form>
+    </div>
+    <div class="filter">
+      <label for="catFilter">Filter category</label>
+      <select 
+      name="catFilter" 
+      id="catFilter"
+      onchange="setFilter(event)"></select>
+      <button class="cancelFilter" onclick="cancelFilter()">Cancel</button>
+    </div>
+    <ul id="videosContainer"></ul>
+  </div>
+
+  <div id="popup" onclick="handlePopupClick()" class="closed">
+    <iframe
+      width="560" height="315" 
+      frame-border="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    >
+    </iframe>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
